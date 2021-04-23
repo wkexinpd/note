@@ -20,5 +20,5 @@
 
 在 Git 中整合来自不同分支的修改主要有两种方法：`merge` 以及 `rebase`。
 
-使用merge合并：
+使用merge合并：master
 
