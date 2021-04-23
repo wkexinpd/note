@@ -26,7 +26,26 @@ $ git cherry-pick <commitHash>
 
 上面命令就会将指定的提交`commitHash`，应用于当前分支。
 
-假设master有a,b两个commit，dev分支有c这个commit，如果dev分支想用master分支中的b分支
+假设master有a,b两个commit，如果dev分支想用master分支中的b分支，可以使用`git cherry-pick 314d01c98d7312789c `将b commit合并到dev分支上
+
+![dev分支上有了bcommit](E:\internship\img\合并\dev分支上有了bcommit.png)
+
+Cherry pick 支持一次转移多个提交。
+
+```
+$ git cherry-pick <HashA> <HashB>
+```
+
+上面的命令将 A 和 B 两个提交应用到当前分支。这会在当前分支生成两个对应的新提交。
+
++ 常用配置项：
+
+| 简写 | 配置项      | 描述                                                         |
+| ---- | ----------- | ------------------------------------------------------------ |
+| -e   | --edit      | 打开外部编辑器，编辑提交的信息                               |
+| -n   | --no-commit | 只更新工作区和暂存区，不产生新的提交                         |
+| -x   |             | 在提交信息的末尾追加一行，方便一行查到这个提交时如何产生的   |
+| -s   | --signoff   | 在提交信息的末尾追加一行操作者的签名，表示是谁进行了这个操作 |
 
 ## 3.git merge & git rebase区别
 
@@ -41,6 +60,8 @@ git会使用两个分支的末端所指的快照（master修改和小修改2）�
 使用rebase合并：
 
 **rebase**会把你当前分支的 commit 放到公共分支的最后面，不会产生新的commit，如图：
+
+检出`dev`分支，将它变基到`master`分支上.
 
 ![区别](E:\internship\img\合并\区别.png)
 
