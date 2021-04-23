@@ -1,6 +1,6 @@
 
 
-### 1: 多个commit合多为一，合成一个ci记录
+## 1: 多个commit合多为一，合成一个ci记录
 
 假设有这几个commit，如图：
 
@@ -16,6 +16,18 @@
 
 ## 2: a分支上有个commmit，b分支上没有这个commit，但是我b分支想用，这时候咋办？
 
+### git cherry-pick：
+
+`git cherry-pick`命令的作用就是将指定的提交（commit）应用于其他分支。
+
+```
+$ git cherry-pick <commitHash>
+```
+
+上面命令就会将指定的提交`commitHash`，应用于当前分支。
+
+假设master有a,b两个commit，
+
 ## 3.git merge & git rebase区别
 
 在 Git 中整合来自不同分支的修改主要有两种方法：`merge` 以及 `rebase`。
@@ -28,7 +40,15 @@ git会使用两个分支的末端所指的快照（master修改和小修改2）�
 
 使用rebase合并：
 
-区别：
+**rebase**会把你当前分支的 commit 放到公共分支的最后面，不会产生新的commit，如图：
 
+![区别](E:\internship\img\合并\区别.png)
 
+但是如果提交存在于自己的仓库之外，而别人可能基于这些提交进行开发，那么不要执行变基。
+
+所以我认为：
+
+rebase更适合在自己的开发分支上一直做，如果想要把主线的修改合并到自己的分支上做一次的集成
+
+merge更适合在远程仓库上，不同的人基于同一个提交进行开发
 
