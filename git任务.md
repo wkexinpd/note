@@ -20,9 +20,15 @@
 
 在 Git 中整合来自不同分支的修改主要有两种方法：`merge` 以及 `rebase`。
 
-使用merge合并：master
+使用merge合并：
+
+git会使用两个分支的末端所指的快照（master修改和小修改2）以及最近的共同祖先（first commit）进行三方合并，合并的结果是生成一个新的快照，如图：
+
+![merge](E:\internship\img\合并\merge.png)
 
 使用rebase合并：
+
+
 
 区别：
 
