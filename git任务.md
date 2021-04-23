@@ -26,7 +26,7 @@ $ git cherry-pick <commitHash>
 
 上面命令就会将指定的提交`commitHash`，应用于当前分支。
 
-假设master有a,b两个commit，
+假设master有a,b两个commit，dev分支有c这个commit，如果dev分支想用master分支中的b分支
 
 ## 3.git merge & git rebase区别
 
