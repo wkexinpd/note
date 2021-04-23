@@ -22,3 +22,9 @@
 
 使用merge合并：master
 
+使用rebase合并：
+
+区别：
+
+
+
